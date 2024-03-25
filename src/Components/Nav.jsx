@@ -9,7 +9,7 @@ const Nav = () => {
     <li><NavLink to='/bookCollection'>Book collection</NavLink></li>
     </>
     return (
-        <div className='mt-8 mb-10'>
+        <div className='mt-8 mb-10 work'>
             <div className="navbar bg-base-100">
   <div className="navbar-start">
     <div className="dropdown">
