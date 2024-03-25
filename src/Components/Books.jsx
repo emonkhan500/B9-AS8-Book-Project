@@ -11,8 +11,8 @@ useEffect(()=>{
 },[])
 
     return (
-        <div className='mt-20'>
-            <div><h1 className='text-4xl playfair text-center font-bold text-black'>Books</h1></div>
+        <div className='mt-32'>
+            <div><h1 className='text-4xl playfair text-center font-bold text-black mb-10'>Books</h1></div>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 '>
             {
 books.map(book=><BookCard key={book.

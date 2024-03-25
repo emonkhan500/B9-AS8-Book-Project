@@ -3,7 +3,7 @@
       "bookId": 1,
       "bookName": "The Silent Patient",
       "author": "Alex Michaelides",
-      "image": "https://i.ibb.co/hB1d1Mk/pngwing-1.png",
+      "image": "https://i.ibb.co/JrztCWm/pngwing-1-1.png",
       "review": "A gripping psychological thriller with unexpected twists and turns.",
       "totalPages": 336,
       "rating": 4.6,
@@ -27,7 +27,7 @@
     },
     {
       "bookId": 3,
-      "bookName": "Sapiens: A Brief History of Humankind",
+      "bookName": "Humankind",
       "author": "Yuval Noah Harari",
       "image": "https://i.ibb.co/WcPCjWt/kindpng-1064993.png",
       "review": "An eye-opening exploration of the history of Homo sapiens.",
@@ -66,14 +66,14 @@
     },
     {
       "bookId": 6,
-      "bookName": "The Subtle Art of Not Giving a F*ck",
+      "bookName": "The Subtle Art ",
       "author": "Mark Manson",
       "image": "https://i.ibb.co/kxmwS4b/kindpng-4022054-1.png",
       "review": "A refreshing and blunt approach to living a good life amidst adversity.",
       "totalPages": 224,
       "rating": 4.3,
       "category": "Self-help",
-      "tags": ["Self-help", "Personal Development", "Mindset"],
+      "tags": ["Self-help", "Mindset"],
       "publisher": "HarperOne",
       "yearOfPublishing": 2016
     },
@@ -105,7 +105,7 @@
       },
       {
         "bookId": 9,
-        "bookName": "Harry Potter and the Philosopher's Stone",
+        "bookName": "Harry Potter ",
         "author": "J.K. Rowling",
         "image": "https://i.ibb.co/hDy5b0t/kindpng-7318921.png",
         "review": "A magical journey into the wizarding world, filled with wonder and adventure.",
