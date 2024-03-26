@@ -7,6 +7,7 @@ const Nav = () => {
     <li><NavLink to='/listedBook'>Listed Books</NavLink></li>
     <li><NavLink to='/pagesToRead'>Pages to Read</NavLink></li>
     <li><NavLink to='/bookCollection'>Book collection</NavLink></li>
+    <li><NavLink to='/contact'>Contact</NavLink></li>
     </>
     return (
         <div className='mt-8 mb-10 work'>

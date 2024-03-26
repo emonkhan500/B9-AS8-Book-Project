@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { readBooks, saveWishlist } from '../LocalStorage/LocalStorage';
+import { getReadBooks, readBooks, saveWishlist } from '../LocalStorage/LocalStorage';
 
 const BookDetails = () => {
+const[read,setRead]=useState([])
+
     const books=useLoaderData()
     const {id}=useParams()
     
@@ -19,9 +21,17 @@ const BookDetails = () => {
         review,
 totalPages}=selectedBook||{};
 
-const handleRead=()=>{
-  readBooks(selectedBook)
-  toast("Great!! You Have Read It");
+const handleRead=(selectedBook)=>{
+  const exist=read?.find(book=>book.bookId=== selectedBook.bookId)
+  if(exist){
+    toast('agei ashe')
+  }
+  else{
+   const reads= readBooks(selectedBook)
+   setRead(reads)
+    toast("Great!! You Have Read It");
+  }
+  
 }
 const handleWishList=()=>{
   saveWishlist(selectedBook)
@@ -54,7 +64,7 @@ const handleWishList=()=>{
     <p>Year of Publishing:    <span className='font-bold'>{yearOfPublishing}</span></p>
     <p>Rating:    <span className='font-bold'>{rating}</span></p>
     <div className="card-actions gap-3 mt-2 ">
-      <button onClick={handleRead} className="btn ">Read</button>
+      <button onClick={()=>handleRead(selectedBook)} className="btn ">Read</button>
       <button onClick={handleWishList} className="btn btn-info">Wishlist</button>
     </div>
   </div>

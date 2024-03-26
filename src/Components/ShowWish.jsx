@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const ShowWish = ({book}) => {
     const {bookName,bookId,
@@ -42,7 +43,9 @@ totalPages}=book;
 
     <div><p className='bg-[#328EFF] py-1 px-2 rounded-xl'>Category: <span className='font-bold'>{category}</span></p></div>
     <div><p className='bg-[#FFAC33]  py-1 px-2 rounded-xl'>Rating:<span className='font-bold'>{rating}</span></p></div>
+    <Link to={`/bookDetails/${bookId}`}>
    <div> <button  className="bg-[#23BE0A] text-white py-1 px-2 rounded-xl">View Details</button></div>
+   </Link>
     </div>
     
     

@@ -16,6 +16,7 @@ import BookCollection from './Components/BookCollection.jsx';
 import BookDetails from './Components/BookDetails.jsx';
 import Read from './Components/Read.jsx';
 import Wish from './Components/Wish.jsx';
+import Contact from './Components/Contact.jsx';
 
 const router = createBrowserRouter([
   {
@@ -56,6 +57,10 @@ const router = createBrowserRouter([
         path:'/bookDetails/:id',
         loader:()=>fetch(`/books.json`),
         element:<BookDetails></BookDetails>,
+      },
+      {
+        path:'/contact',
+        element:<Contact></Contact>
       }
     ]
   },
