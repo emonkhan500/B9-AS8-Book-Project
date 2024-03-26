@@ -11,7 +11,7 @@ const ShowWish = ({book}) => {
 totalPages}=book;
     return (
         <div>
-            <div className="card card-side shadow-xl ">
+                   <div className="card card-side shadow-xl ">
   <figure><img className=' bg-base-300 rounded-xl mb-7 mt-7 ml-9 p-11' src={image} alt="Movie"/></figure>
   <div className="card-body">
     <h2 className="card-title text-3xl playfair">{bookName}</h2>
@@ -28,12 +28,14 @@ totalPages}=book;
             tags?.map((tag)=><li className='bg-base-200 px-2 rounded-lg'>{tag}</li>)
             }
         </ul>
-        <p> <span className='font-bold'>Year of Publishing:</span>  {yearOfPublishing}</p>
+       <div className='flex gap-2'> <img src="https://i.ibb.co/Pm03hGk/Frame-2.png" alt="" />
+       <p>  <span className='font-bold'>Year of Publishing:</span>  {yearOfPublishing}</p>
+       </div>
     </div>
 
     <div className='flex gap-8  mt-4'>
-        <div><p>Number of Pages:   <span className='font-bold'>{totalPages}</span></p></div>
-    <div>
+        <div className='flex gap-2'><img src="https://i.ibb.co/GFm54Bq/Frame-4.png" alt="" /> <p>Number of Pages:   <span className='font-bold'>{totalPages}</span></p></div>
+    <div className='flex gap-2'> <img src="https://i.ibb.co/58sNLvn/Frame-3.png" alt="" />
     <p>Publisher:     <span className='font-bold'>{publisher}</span></p>
     </div>
     </div>
@@ -43,7 +45,7 @@ totalPages}=book;
 
     <div><p className='bg-[#328EFF] py-1 px-2 rounded-xl'>Category: <span className='font-bold'>{category}</span></p></div>
     <div><p className='bg-[#FFAC33]  py-1 px-2 rounded-xl'>Rating:<span className='font-bold'>{rating}</span></p></div>
-    <Link to={`/bookDetails/${bookId}`}>
+   <Link to={`/bookDetails/${bookId}`}>
    <div> <button  className="bg-[#23BE0A] text-white py-1 px-2 rounded-xl">View Details</button></div>
    </Link>
     </div>

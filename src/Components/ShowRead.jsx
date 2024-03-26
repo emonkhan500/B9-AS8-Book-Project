@@ -29,12 +29,14 @@ totalPages}=book;
             tags?.map((tag)=><li className='bg-base-200 px-2 rounded-lg'>{tag}</li>)
             }
         </ul>
-        <p> <span className='font-bold'>Year of Publishing:</span>  {yearOfPublishing}</p>
+       <div className='flex gap-2'> <img src="https://i.ibb.co/Pm03hGk/Frame-2.png" alt="" />
+       <p>  <span className='font-bold'>Year of Publishing:</span>  {yearOfPublishing}</p>
+       </div>
     </div>
 
     <div className='flex gap-8  mt-4'>
-        <div><p>Number of Pages:   <span className='font-bold'>{totalPages}</span></p></div>
-    <div>
+        <div className='flex gap-2'><img src="https://i.ibb.co/GFm54Bq/Frame-4.png" alt="" /> <p>Number of Pages:   <span className='font-bold'>{totalPages}</span></p></div>
+    <div className='flex gap-2'> <img src="https://i.ibb.co/58sNLvn/Frame-3.png" alt="" />
     <p>Publisher:     <span className='font-bold'>{publisher}</span></p>
     </div>
     </div>

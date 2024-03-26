@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { getReadBooks, readBooks, saveWishlist } from '../LocalStorage/LocalStorage';
+import { getReadBooks, getWishList, readBooks, saveWishlist } from '../LocalStorage/LocalStorage';
 
 const BookDetails = () => {
-const[read,setRead]=useState([])
+  const [read, setRead] = useState(getReadBooks())
+  const [wish, setWish] = useState(getWishList())
+// console.log(read)
 
     const books=useLoaderData()
     const {id}=useParams()
@@ -21,21 +23,39 @@ const[read,setRead]=useState([])
         review,
 totalPages}=selectedBook||{};
 
-const handleRead=(selectedBook)=>{
-  const exist=read?.find(book=>book.bookId=== selectedBook.bookId)
-  if(exist){
-    toast('agei ashe')
+
+const handleRead = (selectedBook) => {
+  
+  
+  
+
+  const exists = read.find((book) => book.bookId === selectedBook.bookId);
+  if (exists) {
+    toast.warning('You have already read this book');
   }
+   
+  else {
+    readBooks(selectedBook);
+    setRead((prevRead) => [...prevRead, selectedBook]);
+    toast.success('Great!! You Have Read It');
+    return
+  }
+};
+const handleWishList=(selectedBook)=>{
+  const wishExists = wish?.find((book) => book.bookId === selectedBook.bookId);
+  const exists = read.find((book) => book.bookId === selectedBook.bookId);
+  if(exists){
+    toast.warning('Hey!! Already read it')
+  }
+  else if(wishExists){
+    toast.warning(' Already Added To Wishlist');
+   }
   else{
-   const reads= readBooks(selectedBook)
-   setRead(reads)
-    toast("Great!! You Have Read It");
+    saveWishlist(selectedBook)
+    setWish((prevWish) => [...prevWish, selectedBook])
+  toast("Added To Your WishList");
   }
   
-}
-const handleWishList=()=>{
-  saveWishlist(selectedBook)
-  toast("Added To Your WishList");
 }
 
     return (
@@ -65,7 +85,7 @@ const handleWishList=()=>{
     <p>Rating:    <span className='font-bold'>{rating}</span></p>
     <div className="card-actions gap-3 mt-2 ">
       <button onClick={()=>handleRead(selectedBook)} className="btn ">Read</button>
-      <button onClick={handleWishList} className="btn btn-info">Wishlist</button>
+      <button onClick={()=>handleWishList(selectedBook)} className="btn btn-info">Wishlist</button>
     </div>
   </div>
 </div> 
