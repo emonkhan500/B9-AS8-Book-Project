@@ -14,6 +14,8 @@ import ListedBook from './Components/ListedBook.jsx';
 import PagesToRead from './Components/PagesToRead.jsx';
 import BookCollection from './Components/BookCollection.jsx';
 import BookDetails from './Components/BookDetails.jsx';
+import Read from './Components/Read.jsx';
+import Wish from './Components/Wish.jsx';
 
 const router = createBrowserRouter([
   {
@@ -28,6 +30,16 @@ const router = createBrowserRouter([
       {
         path:'/listedBook',
         element:<ListedBook></ListedBook>,
+        children:[
+          {
+            index:true,
+            element:<Read></Read>
+          },
+          {
+            path:'wish',
+            element:<Wish></Wish>
+          }
+        ]
       },
       {
         path:'/pagesToRead',

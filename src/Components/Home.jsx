@@ -1,3 +1,4 @@
+import { ToastContainer } from "react-toastify";
 import Banner from "./Banner";
 import BookDetails from "./BookDetails";
 import Books from "./Books";
@@ -9,7 +10,7 @@ const Home = () => {
            
             <Banner></Banner>
             <Books></Books>
-            <BookDetails></BookDetails>
+            <ToastContainer />
         </div>
     );
 };

@@ -1,5 +1,8 @@
 import React from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { readBooks, saveWishlist } from '../LocalStorage/LocalStorage';
 
 const BookDetails = () => {
     const books=useLoaderData()
@@ -15,6 +18,16 @@ const BookDetails = () => {
         yearOfPublishing,
         review,
 totalPages}=selectedBook||{};
+
+const handleRead=()=>{
+  readBooks(selectedBook)
+  toast("Great!! You Have Read It");
+}
+const handleWishList=()=>{
+  saveWishlist(selectedBook)
+  toast("Added To Your WishList");
+}
+
     return (
         <div className=''>
            <div className="card card-side shadow-xl ">
@@ -31,7 +44,7 @@ totalPages}=selectedBook||{};
 <div className='flex gap-2'><span className='font-bold work'>Tag: </span>
         <ul className='flex gap-4   work text-[#23BE0A]'>
             {
-            tags?.map(tag=><li className='bg-base-200 px-2 rounded-lg'>{tag}</li>)
+            tags?.map((tag)=><li className='bg-base-200 px-2 rounded-lg'>{tag}</li>)
             }
         </ul>
     </div>
@@ -41,11 +54,12 @@ totalPages}=selectedBook||{};
     <p>Year of Publishing:    <span className='font-bold'>{yearOfPublishing}</span></p>
     <p>Rating:    <span className='font-bold'>{rating}</span></p>
     <div className="card-actions gap-3 mt-2 ">
-      <button className="btn ">Read</button>
-      <button className="btn btn-info">Wishlist</button>
+      <button onClick={handleRead} className="btn ">Read</button>
+      <button onClick={handleWishList} className="btn btn-info">Wishlist</button>
     </div>
   </div>
 </div> 
+<ToastContainer></ToastContainer>
         </div>
     );
 };
