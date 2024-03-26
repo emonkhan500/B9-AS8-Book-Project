@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const BookCard = ({book}) => {
-    console.log(book)
+    // console.log(book)
     const{bookName,bookId,
         category,image,
         publisher,rating,
@@ -13,7 +13,7 @@ totalPages
 
         }=book
     return (
-        <Link>
+        <Link to={`/bookDetails/${bookId}`}>
         <div className='mb-32'>
         <div className="card w-96  border mt-11 p-5 ">
   <figure className="px-10 pt-10 bg-base-300 rounded-b-xl">
