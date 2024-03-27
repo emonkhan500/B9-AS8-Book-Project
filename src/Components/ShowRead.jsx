@@ -2,14 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const ShowRead = ({book}) => {
-    console.log(book)
+    // console.log(book)
     const {bookName,bookId,
         category,image,
         publisher,rating,
         tags,author,
         yearOfPublishing,
         review,
-totalPages}=book;
+totalPages}=book||{};
     return (
         <div>
              <div className="card card-side shadow-xl ">

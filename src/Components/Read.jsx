@@ -3,6 +3,7 @@ import { useLoaderData } from 'react-router-dom';
 import { getReadBooks } from '../LocalStorage/LocalStorage';
 import ShowRead from './ShowRead';
 
+
 const Read = () => {
     // const books=useLoaderData()
     const [readBook,setReadBook]=useState([])
@@ -14,7 +15,7 @@ const Read = () => {
     return (
         <div>
             {
-                readBook.map(book=><ShowRead book={book}></ShowRead>)
+                readBook.map(book=><ShowRead book={book}></ShowRead> )
             }
         </div>
     );
