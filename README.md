@@ -7,4 +7,8 @@
 - You can see your Wishlist in Listed Books page.
 - You can see your Read in Listed Books page.
 
- 
+ For Challenge Requirement I Used
+ - AOS Package,
+ - Animate.css,
+ - Swiper slider,
+ - React icon
