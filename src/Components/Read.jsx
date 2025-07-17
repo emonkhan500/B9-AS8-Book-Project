@@ -28,7 +28,7 @@ const Read = () => {
         } else if (sortCriteria === "yearOfPublishing") {
             sortedBooks.sort((a, b) => b.yearOfPublishing - a.yearOfPublishing);
         }
-        // Update the state with sorted books
+       
         setBooks(sortedBooks);
     };
     return (
