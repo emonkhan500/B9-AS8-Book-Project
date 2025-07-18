@@ -5,9 +5,7 @@ import ShowRead from './ShowRead';
 
 
 const Read = () => {
-    
-    
-    const [books, setBooks] = useState([]);
+     const [books, setBooks] = useState([]);
     console.log(books)
 
     useEffect(() => {
