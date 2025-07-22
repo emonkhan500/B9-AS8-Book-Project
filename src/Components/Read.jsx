@@ -7,10 +7,8 @@ import ShowRead from './ShowRead';
 const Read = () => {
      const [books, setBooks] = useState([]);
     console.log(books)
-
     useEffect(() => {
-        
-        const data=getReadBooks()
+      const data=getReadBooks()
         setBooks(data)
     }, []);
 
