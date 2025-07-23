@@ -37,11 +37,7 @@ const PagesToRead = () => {
 
 
     // console.log(lcID, ' and ', books);
-
-
-
-
-    return (
+ return (
         <div className='w-full min-h-full flex justify-center items-end'>
             <BarChart className='' width={1200} height={700} data={books} margin={{ top: 5, right: 10, left: 0, bottom: 80 }}>
                 <CartesianGrid strokeDasharray="3 3" />

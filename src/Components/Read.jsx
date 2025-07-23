@@ -12,8 +12,7 @@ const Read = () => {
         setBooks(data)
     }, []);
 
-    
-    const handleSort = (sortCriteria) => {
+   const handleSort = (sortCriteria) => {
         console.log(sortCriteria)
         let sortedBooks = [...books];
     
